@@ -3,13 +3,13 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def new
-
-  end
-
   def show
     # pass in the ID
     @post = Post.find(params[:id])
+  end
+
+  def new
+    @post = Post.new
   end
 
   def create
@@ -19,8 +19,11 @@ class PostsController < ApplicationController
 
     # actually create the new post in the DB
     @post = Post.new(post_params)
-    @post.save
-    redirect_to @post
+    if(@post.save)
+      redirect_to @post
+    else
+      render "new"
+    end
   end
 
   private def post_params
