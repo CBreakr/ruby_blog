@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.post_element {
+  background-color: #BBB;
+  margin-top:12px;
+  padding:8px;
+}
