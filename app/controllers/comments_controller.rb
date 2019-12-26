@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
-  http_basic_authenticate_with name: "RobNot", password: "112358", only: [:destroy]
+  http_basic_authenticate_with name: "RobNot",
+  password: "112358",
+  only: [:destroy]
 
   ###
   # action on new comment submit
