@@ -52,6 +52,15 @@ class PostsController < ApplicationController
   end
 
   ###
+  # delete post from the DB
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_path
+  end
+
+  ###
   # need to specify the fields
   # otherwise it'll throw an error
   private def post_params
